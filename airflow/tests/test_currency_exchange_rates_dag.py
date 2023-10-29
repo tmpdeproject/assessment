@@ -1,5 +1,6 @@
 from airflow.models import DagBag
 
+#A basic test to check for import errors
 dag_id = 'retrieve_currency_exchange_rates_dag'
 
 def test_no_import_errors():

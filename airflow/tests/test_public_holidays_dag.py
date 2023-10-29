@@ -1,5 +1,6 @@
 from airflow.models import DagBag
 
+#A basic test to check for import errors
 def test_no_import_errors():
     dag_bag = DagBag()
     dag = dag_bag.get_dag(dag_id='retrieve_bank_holidays_dag')
