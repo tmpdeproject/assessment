@@ -1,0 +1,21 @@
+#Docker compose with Jenkins
+#Based on https://github.com/jenkinsci/docker/blob/master/README.md
+version: '3.8'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts-jdk17
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    ports:
+      - "50000:50000"
+      - "9090:8080"
+    volumes:
+      - /Volumes/DATA2/Docker/jenkins:/var/jenkins_home
+  
+    restart: on-failure
+
+
+  jenkins-ssh-agent:
+    image: jenkins/ssh-agent
